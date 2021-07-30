@@ -14,7 +14,8 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "prepare": "husky install",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "lint-staged": "lint-staged"
   },
   "dependencies": {
     "gatsby": "^3.10.2",
