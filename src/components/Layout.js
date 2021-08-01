@@ -1,12 +1,17 @@
 import React from 'react'
+import AppProviders from '@context/AppProviders'
+import CssBaseline from '@material-ui/core/CssBaseline'
+import Navigation from '@components/Navigation'
+import Footer from '@components/Footer.js'
 
 const Layout = ({ children }) => {
   return (
-    <>
-      <header>Header</header>
+    <AppProviders>
+      <CssBaseline />
+      <Navigation />
       <main>{children}</main>
-      <footer>Footer</footer>
-    </>
+      <Footer />
+    </AppProviders>
   )
 }
 
