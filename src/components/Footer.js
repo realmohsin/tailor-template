@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
+import clsx from 'clsx'
 import { StaticImage } from 'gatsby-plugin-image'
 import { makeStyles } from '@material-ui/core/styles'
 import { Grid, Container, Typography, Hidden } from '@material-ui/core'
@@ -7,7 +8,7 @@ import { FaFacebookF, FaInstagram, FaLinkedin, FaYoutube } from 'react-icons/fa'
 
 const useStyles = makeStyles(theme => ({
   footer: {
-    height: '66rem',
+    height: '56rem',
     position: 'relative',
     '& > .gatsby-image-wrapper-constrained': {
       position: 'absolute',
@@ -17,13 +18,13 @@ const useStyles = makeStyles(theme => ({
       left: 0,
     },
     color: theme.palette.common.gray1,
-    padding: '16rem 0',
+    padding: '12rem 0 16rem',
     [theme.breakpoints.down('sm')]: {
       padding: '10rem 0 0',
       height: '72rem',
     },
     [theme.breakpoints.down('xs')]: {
-      height: '88rem',
+      height: '89rem',
       padding: '9rem 0 4rem',
     },
   },
@@ -40,10 +41,19 @@ const useStyles = makeStyles(theme => ({
       marginBottom: 0,
     },
   },
+  topLogoContainer: {
+    width: '40%',
+
+    margin: '-1rem auto 3rem',
+  },
   logoContainer: {
-    width: '14.5rem',
-    [theme.breakpoints.down('xs')]: {
-      margin: '0 auto',
+    width: '25.5rem',
+    marginLeft: '15rem',
+    marginTop: '-0.5rem',
+    '@media (max-width: 1645px)': {
+      width: '22rem',
+      marginLeft: '7rem',
+      marginTop: '-3rem',
     },
   },
   authLinksContainer: {
@@ -66,20 +76,20 @@ const useStyles = makeStyles(theme => ({
       marginTop: '0.5rem',
     },
   },
-  addressTitle: {
-    fontSize: '1.55rem',
+  footerColumnTitle: {
+    fontSize: '1.75rem',
     fontWeight: 'bold',
-    color: 'white',
-    marginBottom: '0.5rem',
+    color: theme.palette.primary.main,
+    marginBottom: '0.75rem',
     [theme.breakpoints.down('xs')]: {
       textAlign: 'center',
       marginTop: '5rem',
     },
   },
-  address: {
+  footerColumn: {
     color: theme.palette.common.gray1,
     textTransform: 'uppercase',
-    fontSize: '1.3rem',
+    fontSize: '1.4rem',
     fontWeight: 300,
     [theme.breakpoints.down('xs')]: {
       textAlign: 'center',
@@ -107,12 +117,13 @@ const useStyles = makeStyles(theme => ({
     },
   },
   bottomDiv: {
-    marginTop: '7rem',
-    width: 'max-content',
-    marginLeft: 'auto',
+    marginTop: '12rem',
+    // width: 'max-content',
+    // marginLeft: 'auto',
     fontSize: '1.25rem',
     [theme.breakpoints.down('xs')]: {
-      margin: '3rem auto 0',
+      margin: '5rem auto 0',
+      textAlign: 'center',
     },
   },
   privacyLink: {
@@ -122,6 +133,37 @@ const useStyles = makeStyles(theme => ({
     transition: '0.4s all',
     '&:hover': {
       color: 'white',
+    },
+  },
+  columnPadding: {
+    paddingLeft: '6rem',
+    [theme.breakpoints.down('xs')]: {
+      paddingLeft: 0,
+    },
+  },
+  footerLink: {
+    marginBottom: '0.25rem',
+    '&:hover': {
+      color: theme.palette.primary.main,
+    },
+  },
+  telLink: {
+    fontSize: '1.2em',
+    marginTop: '0.5rem',
+    '&:hover': {
+      color: theme.palette.primary.main,
+    },
+  },
+  footerUl: {
+    [theme.breakpoints.down('xs')]: {
+      display: 'flex',
+      justifyContent: 'space-around',
+      textAlign: 'center',
+      marginTop: '3rem',
+      '& a': {
+        marginLeft: '1.4rem',
+        // letterSpacing: '0.5px',
+      },
     },
   },
 }))
@@ -137,67 +179,100 @@ const Footer = props => {
         objectPosition="top right"
       />
       <Container>
-        <div className={classes.topDiv}>
-          <Hidden smDown>
-            <div className={classes.authLinksContainer}>
-              <Link to="/" className={classes.authLink}>
-                Employee Login
-              </Link>
-              <Link to="/" className={classes.authLink}>
-                Subcontractors
-              </Link>
-            </div>
-          </Hidden>
-          <div className={classes.logoContainer}>
+        <Hidden mdUp>
+          <div className={classes.topLogoContainer}>
             <StaticImage
               src="../images/logo.png"
               alt="Logo"
               placeholder="none"
             />
           </div>
-        </div>
+        </Hidden>
         <Grid container className={classes.gridContainer}>
-          <Grid item xs={12} sm={4} md={3}>
-            <Typography variant="body1" className={classes.addressTitle}>
-              New York
+          <Grid item xs={12} sm={4} md={3} className={classes.columnPadding}>
+            <h4 variant="body1" className={classes.footerColumnTitle}>
+              Explore
+            </h4>
+            <Typography variant="body1" className={classes.footerColumn}>
+              <ul className={classes.footerUl}>
+                <li>
+                  <Link to="/" className={classes.footerLink}>
+                    Home
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/about" className={classes.footerLink}>
+                    About
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/services" className={classes.footerLink}>
+                    Services
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/gallery" className={classes.footerLink}>
+                    Gallery
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/contact" className={classes.footerLink}>
+                    Contact
+                  </Link>
+                </li>
+              </ul>
             </Typography>
-            <Typography variant="body1" className={classes.address}>
+          </Grid>
+
+          <Grid item xs={12} sm={4} md={3}>
+            <h4 variant="body1" className={classes.footerColumnTitle}>
+              Shop Hours
+            </h4>
+            <Typography variant="body1" className={classes.footerColumn}>
+              Monday - 10:30am - 4:45pm <br />
+              Tuesday - 10:30am - 4:45pm <br />
+              Wednesday - 10:30am - 4:45pm <br />
+              Thursday - 10:30am - 4:45pm <br />
+              Friday - 10:30am - 4:45pm <br />
+              Saturday - CLOSED <br />
+              Sunday - CLOSED
+            </Typography>
+          </Grid>
+
+          <Grid item xs={12} sm={4} md={3} className={classes.columnPadding}>
+            <h4 variant="body1" className={classes.footerColumnTitle}>
+              Contact Us
+            </h4>
+
+            <Typography variant="body1" className={classes.footerColumn}>
               565 Lexington Avenue <br />
               New York, New York 10021 <br />
-              212.245.9200
+              <a href="tel:123-456-7890" className={classes.telLink}>
+                949.215.2100
+              </a>
             </Typography>
           </Grid>
 
-          <Grid item xs={12} sm={4} md={3}>
-            <Typography variant="body1" className={classes.addressTitle}>
-              Los Angeles
-            </Typography>
-            <Typography variant="body1" className={classes.address}>
-              2445 Mccabe Way <br />
-              Irvine, California 92512 <br />
-              949.215.2100
-            </Typography>
-          </Grid>
+          <Hidden smDown>
+            <Grid item xs={12} md={3}>
+              <div className={classes.logoContainer}>
+                <StaticImage
+                  src="../images/logo.png"
+                  alt="Logo"
+                  placeholder="none"
+                />
+              </div>
+            </Grid>
+          </Hidden>
 
-          <Grid item xs={12} sm={4} md={3}>
-            <Typography variant="body1" className={classes.addressTitle}>
-              Connecticut
-            </Typography>
-            <Typography variant="body1" className={classes.address}>
-              650 Danbury Road <br />
-              Ridgefield, Connecticut 06877 <br />
-              212.245.2000
-            </Typography>
-          </Grid>
-
-          <Grid item xs={12} sm={12}>
+          {/* <Grid item xs={12} sm={12}>
             <div className={classes.socialIconsContainer}>
               <FaFacebookF className={classes.socialIcon} />
               <FaInstagram className={classes.socialIcon} />
               <FaYoutube className={classes.socialIcon} />
               <FaLinkedin className={classes.socialIcon} />
             </div>
-          </Grid>
+          </Grid> */}
         </Grid>
         <div className={classes.bottomDiv}>
           <Hidden xsDown>
