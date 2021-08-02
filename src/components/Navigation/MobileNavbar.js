@@ -18,9 +18,19 @@ const useStyles = makeStyles(theme => ({
       marginLeft: '1rem',
     },
   },
+  leftSideContainer: {
+    display: 'flex',
+    alignItems: 'center',
+  },
+  logoText: {
+    color: theme.palette.primary.main,
+    fontSize: '2rem',
+    paddingLeft: '1rem',
+  },
   logoContainer: {
-    height: '100%',
-    width: '7.5rem',
+    // height: '100%',
+    // width: '7.5rem',
+    // padding: '0.25rem',
   },
 }))
 
@@ -33,13 +43,25 @@ const MobileCtaNavbar = ({ toggleSideDrawer }) => {
       alignItems="center"
       className={classes.mobileNavbar}
     >
-      <div className={classes.logoContainer}>
+      <div className={classes.leftSideContainer}>
+        <div className={classes.logoContainer}>
+          {/* <StaticImage
+            src="../../images/logo-no-title.png"
+            alt="Logo"
+            placeholder="none"
+            className={classes.logo}
+          /> */}
+        </div>
+        <div className={classes.logoText}>Finkels Alterations</div>
+      </div>
+      {/* <div className={classes.logoContainer}>
         <StaticImage
           src="../../images/logo-no-title.png"
           alt="Logo"
+          placeholder="none"
           className={classes.logo}
         />
-      </div>
+      </div> */}
       <Toggle onToggle={toggleSideDrawer} />
     </Grid>
   )

@@ -56,13 +56,13 @@ const useStyles = makeStyles(theme => ({
   },
 
   link: {
-    color: theme.palette.primary.main,
+    color: theme.palette.primary.dark,
     textTransform: 'uppercase',
     letterSpacing: '0.5px',
     wordSpacing: '1.2px',
-    fontSize: '1.1rem',
+    fontSize: '1.3rem',
     display: 'flex',
-    height: '4rem',
+    height: '5rem',
     borderBottom: `1px solid #D6EDFA`,
     alignItems: 'center',
     justifyContent: 'space-between',
@@ -71,12 +71,12 @@ const useStyles = makeStyles(theme => ({
     fontWeight: 'normal',
   },
   logoContainer: {
-    paddingTop: '5rem',
+    padding: '4rem 2.5rem 4rem',
     display: 'flex',
     justifyContent: 'center',
   },
   logo: {
-    width: '15rem',
+    width: '100%',
     margin: '0 auto',
   },
   subMenuUl: {
@@ -104,7 +104,7 @@ const SideDrawer = ({ showing, closeSideDrawer }) => {
       <div className={sideDrawerClasses.join(' ')}>
         <div className={classes.logoContainer}>
           <StaticImage
-            src="../../../assets/images/common/logo.png"
+            src="../../../images/logo.png"
             alt="Logo"
             className={classes.logo}
           />
@@ -125,22 +125,22 @@ const SideDrawer = ({ showing, closeSideDrawer }) => {
             </li>
 
             <li>
-              <Link to={`/projects`} className={classes.link}>
-                Projects
-              </Link>
-            </li>
-
-            <li>
               <Link to={`/services`} className={classes.link}>
                 Services
               </Link>
             </li>
 
             <li>
+              <Link to={`/gallery`} className={classes.link}>
+                Gallery
+              </Link>
+            </li>
+            {/* 
+            <li>
               <Link to={`/careers`} className={classes.link}>
                 Careers
               </Link>
-            </li>
+            </li> */}
 
             <li>
               <Link to={`/contact`} className={classes.link}>

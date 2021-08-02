@@ -1,7 +1,9 @@
 import { createTheme } from '@material-ui/core/styles'
 
-const primaryColor = '#EF3829'
-const secondaryColor = '#191922'
+// const primaryColor = '#EF3829'
+const primaryColor = '#ffbd59'
+// const secondaryColor = '#191922'
+const secondaryColor = '#2F3953'
 const gray1 = '#808085'
 
 const theme = createTheme({
@@ -91,8 +93,8 @@ const theme = createTheme({
   },
   custom: {
     title1: {
-      fontSize: '4.9rem',
-      fontWeight: 700,
+      fontSize: '4.6rem',
+      fontWeight: 400,
     },
     title2: {
       fontSize: '4rem',
@@ -106,7 +108,7 @@ const theme = createTheme({
       borderLeft: `12px solid ${primaryColor}`,
       paddingLeft: '4rem',
       '@media (max-width: 600px)': {
-        borderLeft: `10px solid ${primaryColor}`,
+        borderLeft: `7px solid ${primaryColor}`,
         paddingLeft: '2.4rem',
       },
     },
