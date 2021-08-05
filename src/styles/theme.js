@@ -22,7 +22,7 @@ const theme = createTheme({
     htmlFontSize: 10,
     fontFamily: ['Libre Franklin', 'sans-serif'].join(', '),
     body1: {
-      fontSize: '1.5rem',
+      fontSize: '1.6rem',
       lineHeight: '1.7',
       letterSpacing: '0.3px',
     },

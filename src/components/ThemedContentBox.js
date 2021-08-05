@@ -43,6 +43,11 @@ const useStyles = makeStyles(theme => ({
     maxWidth: '30rem',
     marginBottom: '2rem',
   },
+  logoContainer: {
+    backgroundColor: theme.palette.secondary.dark,
+    width: 'max-content',
+    padding: '1rem 3.5rem',
+  },
 }))
 
 const ThemedContentBox = ({
@@ -53,6 +58,7 @@ const ThemedContentBox = ({
   onDarkBg,
   extraClass,
   titleAs,
+  headerBgColor,
 }) => {
   const classes = useStyles()
 
@@ -75,11 +81,13 @@ const ThemedContentBox = ({
       )}
 
       {headerImgFluid && (
-        <GatsbyImage
-          image={getImage(headerImgFluid)}
-          alt="Think Safe, Work Safe, Live Safe"
-          className={classes.headerImg}
-        />
+        <div className={headerBgColor && classes.logoContainer}>
+          <GatsbyImage
+            image={getImage(headerImgFluid)}
+            alt="Think Safe, Work Safe, Live Safe"
+            className={classes.headerImg}
+          />
+        </div>
       )}
 
       {title && (

@@ -1,10 +1,10 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import clsx from 'clsx'
+// import clsx from 'clsx'
 import { StaticImage } from 'gatsby-plugin-image'
 import { makeStyles } from '@material-ui/core/styles'
 import { Grid, Container, Typography, Hidden } from '@material-ui/core'
-import { FaFacebookF, FaInstagram, FaLinkedin, FaYoutube } from 'react-icons/fa'
+// import { FaFacebookF, FaInstagram, FaLinkedin, FaYoutube } from 'react-icons/fa'
 
 const useStyles = makeStyles(theme => ({
   footer: {
