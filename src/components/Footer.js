@@ -24,8 +24,8 @@ const useStyles = makeStyles(theme => ({
       height: '72rem',
     },
     [theme.breakpoints.down('xs')]: {
-      height: '89rem',
-      padding: '9rem 0 4rem',
+      height: '87rem',
+      padding: '9rem 0 2rem',
     },
   },
   footerBg: {
@@ -161,7 +161,7 @@ const useStyles = makeStyles(theme => ({
       textAlign: 'center',
       marginTop: '3rem',
       '& a': {
-        marginLeft: '1.4rem',
+        // marginLeft: '1.4rem',
         // letterSpacing: '0.5px',
       },
     },

@@ -27,12 +27,12 @@ const useStyles = makeStyles(theme => ({
   },
   logoText: {
     color: theme.palette.primary.main,
-    fontSize: '2.7rem',
+    fontSize: '2.2rem',
     paddingLeft: '1rem',
     fontWeight: 300,
   },
   logoContainer: {
-    width: '8rem',
+    width: '6rem',
     padding: '0.7rem',
   },
   navUl: {

@@ -3,6 +3,8 @@ import clsx from 'clsx'
 import { StaticImage, GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { makeStyles } from '@material-ui/core/styles'
 import anime from 'animejs'
+import { Container } from '@material-ui/core'
+import Button from './Button'
 
 // This component is an entire hero section, unless asBanner prop is used
 
@@ -17,19 +19,51 @@ const useStyles = makeStyles(theme => ({
     height: '100%',
     // filter: 'grayscale(100%)',
   },
+  heroGrid: {
+    display: 'grid',
+    height: '100%',
+    gridTemplateColumns: '1fr 1fr',
+    alignItems: 'center',
+    justifyItems: 'end',
+    position: 'absolute',
+    top: 0,
+    bottom: 0,
+    left: 0,
+    right: 0,
+    background:
+      'linear-gradient(to right, rgba(0,33,51,0.9) 10%, rgba(0,33,51,0.75) 25%, rgba(0,33,51,0) 100%)',
+  },
+  heroContent: {
+    width: '65%',
+    color: 'white',
+    borderLeft: '1px solid white',
+    paddingLeft: '2.5rem',
+  },
+  heroTitle: {
+    fontSize: '4rem',
+    lineHeight: 1.2,
+    marginBottom: '1.8rem',
+    textShadow: 'black 0px 0px 7px',
+  },
+  heroBlurb: {
+    fontSize: '1.8rem',
+    lineHeight: 1.5,
+    marginBottom: '2rem',
+    textShadow: 'black 0px 0px 7px',
+  },
+  heroButton: {},
+  // contentGrid: {
+  //   display: 'grid',
+  //   height: '100%',
+  //   gridTemplateColumns: '1fr 1fr',
+  //   alignItems: 'center',
+  //   justifyItems: 'center',
+  // },
   asBanner: {
     height: '25rem',
-    // position: 'static',
+    position: 'static',
     background: theme.palette.secondary.main,
     textAlign: 'center',
-    position: 'relative',
-    '& > .gatsby-image-wrapper-constrained': {
-      position: 'absolute',
-      top: 0,
-      bottom: 0,
-      right: 0,
-      left: 0,
-    },
     [theme.breakpoints.down('sm')]: {
       height: '10rem',
     },
@@ -58,10 +92,6 @@ const useStyles = makeStyles(theme => ({
     opacity: 0,
     transform: 'scale(0.2)',
   },
-  heroImgBanner: {
-    // filter: 'grayscale(100%)',
-    zIndex: -10,
-  },
 }))
 
 const CenteredLogo = () => {
@@ -74,7 +104,7 @@ const CenteredLogo = () => {
   )
 }
 
-const HeroSection = ({ heroImgData, children, asBanner, homePage }) => {
+const HeroSection2 = ({ heroImgData, children, asBanner, homePage }) => {
   const classes = useStyles()
 
   const [overlayExists, setOverlayExists] = useState(true)
@@ -118,11 +148,6 @@ const HeroSection = ({ heroImgData, children, asBanner, homePage }) => {
   if (asBanner) {
     return (
       <div className={clsx(classes.heroSection, classes.asBanner)}>
-        <GatsbyImage
-          image={getImage(heroImgData)}
-          alt="Interior Display"
-          className={classes.heroImgBanner}
-        />
         <h1 className={classes.bannerTitle}>{asBanner}</h1>
       </div>
     )
@@ -136,7 +161,24 @@ const HeroSection = ({ heroImgData, children, asBanner, homePage }) => {
           alt="Interior Display"
           className={classes.heroImg}
         />
-        {children}
+        <div className={classes.heroGrid}>
+          {/* <Container> */}
+          {/* <div className={classes.contentGrid}> */}
+          <div className={classes.heroContent}>
+            <h1 className={classes.heroTitle}>
+              New Immigrant Community Empowerment (NICE)
+            </h1>
+            <p className={classes.heroBlurb}>
+              COVID-19 has devastated immigrant communities across NYC. Since
+              March, we have distributed over $2 million in cash assistance and
+              80,000 meals. Help us do more.
+            </p>
+            <Button text="donate now" isLink />
+          </div>
+          <div />
+          {/* </div> */}
+          {/* </Container> */}
+        </div>
       </section>
       {homePage && overlayExists && (
         <div id="initial-overlay" className={classes.initialOverlay}>
@@ -147,4 +189,4 @@ const HeroSection = ({ heroImgData, children, asBanner, homePage }) => {
   )
 }
 
-export default HeroSection
+export default HeroSection2

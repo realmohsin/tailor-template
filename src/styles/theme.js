@@ -23,8 +23,9 @@ const theme = createTheme({
     fontFamily: ['Libre Franklin', 'sans-serif'].join(', '),
     body1: {
       fontSize: '1.6rem',
-      lineHeight: '1.7',
+      lineHeight: '1.5',
       letterSpacing: '0.3px',
+      color: '#000000',
     },
     body2: {},
   },
@@ -106,7 +107,7 @@ const theme = createTheme({
     themedBorderAndPadding: {
       // styles for container with themed left border
       borderLeft: `12px solid ${primaryColor}`,
-      paddingLeft: '4rem',
+      paddingLeft: '3rem',
       '@media (max-width: 600px)': {
         borderLeft: `7px solid ${primaryColor}`,
         paddingLeft: '2.4rem',
@@ -124,7 +125,7 @@ const theme = createTheme({
       width: 0,
       fontSize: '2.2rem',
       position: 'relative',
-      left: '-4.1rem',
+      left: '-3.1rem',
       '@media (max-width: 600px)': {
         left: '-2.4rem',
       },

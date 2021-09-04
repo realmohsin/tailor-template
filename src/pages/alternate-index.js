@@ -2,35 +2,24 @@ import * as React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '@components/Layout'
 import Head from '@components/Head'
-import HeroSection from '@components/HeroSection'
+import HeroSection2 from '@components/HeroSection2'
 import HeroContent from '@components/HeroContent'
 import SliderSection from '@components/HomePage/SliderSection'
 import InfoSection from '@components/HomePage/InfoSection'
-import IntroSection from '@components/HomePage/IntroSection'
 import ParallaxSection from '@components/HomePage/ParallaxSection'
-import HeroSection2 from '@components/HeroSection2'
 
 const HomePage = ({ location, data }) => {
   return (
     <>
       <Head pathname={location.pathname} />
       <Layout>
-        {/* <HeroSection heroImgData={data.homeHeroBg.childImageSharp} homePage>
-          <HeroContent
-            subtitle="Perfect Tailoring and Garment Reconstruction"
-            title="Fix your fit at Finkels Alterations"
-            buttonText="Contact Us"
-            url="/contact"
-          />
-        </HeroSection> */}
-        {/* <InfoSection logoFluid={data.logo} rightImgFluid={data.infoImg} /> */}
         <HeroSection2
           heroImgData={data.homeHeroBg.childImageSharp}
           homePage
         ></HeroSection2>
-        <IntroSection />
+        {/* <InfoSection logoFluid={data.logo} rightImgFluid={data.infoImg} />
         <ParallaxSection />
-        <SliderSection />
+        <SliderSection /> */}
       </Layout>
     </>
   )

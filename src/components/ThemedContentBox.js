@@ -19,6 +19,7 @@ const useStyles = makeStyles(theme => ({
   title: {
     ...theme.custom.title2,
     marginBottom: '1rem',
+    color: 'white',
     [theme.breakpoints.down('xs')]: {
       fontSize: '2.8rem',
     },
@@ -32,10 +33,10 @@ const useStyles = makeStyles(theme => ({
   },
   textShadow: {
     textShadow: 'black 0px 0px 3px',
-    color: 'white',
   },
   textShadowParas: {
     '& p': {
+      color: 'white',
       textShadow: 'black 0px 0px 15px',
     },
   },

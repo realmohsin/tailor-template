@@ -7,23 +7,25 @@ import { GoArrowRight } from 'react-icons/go'
 const useStyles = makeStyles(theme => ({
   button: {
     backgroundColor: theme.palette.primary.main,
-    color: 'white',
+    color: theme.palette.secondary.main,
     fontSize: '1.2rem',
     fontWeight: 'bold',
     textTransform: 'uppercase',
-    lineHeight: '5.7rem',
-    padding: '0 4rem',
+    lineHeight: '5rem',
+    padding: '0 3.4rem',
     border: 'none',
     letterSpacing: '3px',
     wordSpacing: '1px',
     width: 'max-content',
     position: 'relative',
+    display: 'flex',
+    alignItems: 'center',
     '&:hover > span': {
-      transform: 'translateX(-8%)',
+      transform: 'translateX(-1rem)',
     },
     '&:hover > #arrow': {
       opacity: 1,
-      transform: 'translateX(80%)',
+      transform: 'translateX(0.5rem)',
     },
     [theme.breakpoints.down('md')]: {
       fontSize: '1.1rem',
@@ -34,13 +36,15 @@ const useStyles = makeStyles(theme => ({
   arrow: {
     fontSize: '2.5rem',
     position: 'absolute',
-    top: '27%',
-    right: '15%',
+    right: '2rem',
+    top: '11px',
+    // top: '27%',
+    // right: '15%',
     opacity: 0,
     transition: '0.4s all',
   },
   textSpan: {
-    display: 'block',
+    display: 'inline-block',
     transition: '0.4s all',
   },
 }))

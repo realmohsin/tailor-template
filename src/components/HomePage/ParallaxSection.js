@@ -11,13 +11,15 @@ const useStyles = makeStyles(theme => ({
   aboutSection: {
     height: '111rem',
     color: 'white',
+    position: 'relative',
     [theme.breakpoints.down('xs')]: {
       height: '110rem',
     },
   },
   parallax: {
     height: '100%',
-    filter: 'grayscale(100%)',
+    zIndex: -10,
+    // filter: 'grayscale(100%)',
   },
   gridContainer: {
     marginTop: '32rem',
@@ -34,6 +36,17 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down('sm')]: {
       margin: ' 8rem auto 0',
     },
+  },
+  filter: {
+    background:
+      'linear-gradient(to right, rgba(0,33,51,0.9) 10%, rgba(0,33,51,0.75) 25%, rgba(0,33,51,0) 100%)',
+    position: 'absolute',
+    top: 0,
+    bottom: 0,
+    right: 0,
+    left: 0,
+    height: '100%',
+    zIndex: 0,
   },
 }))
 
