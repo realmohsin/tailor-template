@@ -64,7 +64,7 @@ const ContentSection = ({ contentOnRight }) => {
   return (
     <section className={classes.ContentSection}>
       <StaticImage
-        src="../../images/hero-img-2.jpg"
+        src="../images/hero-img-2.jpg"
         alt="Background"
         className={classes.bgImg}
         objectPosition="0% 0%"

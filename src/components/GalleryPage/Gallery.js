@@ -192,7 +192,7 @@ const ProjectsGrid = props => {
               xs={12}
               md={4}
               className={classes.gridItem}
-              onClick={() => navigate(`/${project.slug}`)}
+              // onClick={() => navigate(`/${project.slug}`)}
             >
               <GatsbyImage
                 image={getImage(
@@ -200,9 +200,9 @@ const ProjectsGrid = props => {
                 )}
                 className={classes.projectImg}
               />
-              <Link to={`/${project.slug}`} className={classes.projectTitle}>
+              <div className={classes.projectTitle}>
                 <h3>{project.name}</h3>
-              </Link>
+              </div>
               <div className={classes.overlay} />
             </Grid>
           )
